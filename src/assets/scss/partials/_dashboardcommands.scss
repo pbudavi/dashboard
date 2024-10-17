@@ -1,0 +1,467 @@
+@import "./mixins";
+
+.dashboard-commands {
+  .p-inputwrapper {
+    @include commandAnimationInputText;
+    .p-dropdown {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 0px 18px;
+      align-items: center;
+      justify-content: center;
+      width: 21rem;
+      max-width: 100%;
+      height: 2.5rem;
+      box-shadow: none;
+    }
+  }
+}
+
+.multiple-select {
+  @include commandDropDownStyle;
+  .p-element {
+    @include commandAnimationInputText;
+    .p-overlay {
+      .p-multiselect-items-wrapper {
+        padding: 10px;
+        flex-wrap: wrap;
+        display: flex;
+        .p-element {
+          .p-multiselect-item {
+            gap: 1rem;
+            padding: 10px;
+            .p-checkbox {
+              .p-checkbox-box {
+                border: 1px solid;
+                border-radius: 3px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .p-multiselect {
+    border: 1px solid var(--secondary-color);
+    border-radius: 6px;
+    padding: 9px 10px;
+    height: 2.5rem;
+    width: 21rem;
+    .p-multiselect-trigger {
+      right: 1rem;
+      position: relative;
+      padding-right: 0.5rem;
+    }
+    .p-multiselect-label-container {
+      .p-multiselect-label {
+        font-weight: bold;
+        padding: 5px;
+      }
+      .p-icon-wrapper {
+        svg {
+          display: none;
+        }
+      }
+    }
+
+    .p-element {
+      .p-multiselect-filter-container {
+        @include searchBoxStyle;
+      }
+    }
+  }
+}
+.dropdown-container {
+  .label {
+    left: 0.6rem;
+    color: var(--label-color);
+    font-weight: 700;
+  }
+}
+
+.btn-group {
+  .round-icon-button {
+    .p-button {
+      .p-button-icon-left {
+        margin-left: 13px !important;
+      }
+    }
+  }
+  .add-btn {
+    margin-top: -35px;
+    @include addOfferField;
+    .custom-textarea {
+      .p-inputtextarea {
+        border: 1px solid #8c92a4;
+        resize: none;
+      }
+      img {
+        top: 22px;
+        transform: translateY(-50%);
+        left: 12px;
+      }
+    }
+    .remove-icon {
+      @include multiTextDeleteButton;
+    }
+    .p-element {
+      align-items: center;
+      justify-content: center;
+      border-radius: "50%";
+      width: "40px";
+      bottom: "36px";
+      left: "14px";
+    }
+    .p-button {
+      @include multiTextButtonStyle;
+      .p-button-icon {
+        margin-left: 0px;
+      }
+    }
+  }
+  .btn-group-model {
+    border-top: 1px solid #bababb;
+    margin-top: 1.5rem;
+    .cancel-btn {
+      @include multiTextFotterButtonStyle(55px);
+    }
+  }
+  .p-element {
+    .p-dialog {
+      width: 100%;
+      max-width: 55rem;
+    }
+    .p-dialog-header {
+      padding: 1.5rem 2rem;
+      margin-bottom: -13px;
+      .p-dialog-title {
+        font-size: 20px;
+        color: #09193299;
+        font-weight: bold;
+      }
+    }
+    .p-dialog-content {
+      padding: 1.5rem;
+      .p-inputtextarea {
+        width: 90%;
+      }
+    }
+  }
+  .p-button-secondary {
+    width: 5rem !important;
+    height: 2.5rem !important;
+    background: var(--primary-color) !important;
+    border: 1px solid var(--grayscale-color) !important;
+    border-radius: 8px !important;
+    .p-button-label {
+      margin-left: 0px !important;
+    }
+  }
+  .model-btn {
+    .p-button {
+      width: 5rem !important;
+      height: 2.5rem !important;
+      background: #050f1e !important;
+      border: 1px solid var(--grayscale-color) !important;
+      border-radius: 8px !important;
+    }
+    .p-button-label {
+      margin-left: 0px !important;
+    }
+  }
+  .p-button {
+    width: 2.5rem;
+    position: relative;
+    left: -51px;
+    height: 2.5rem;
+    background: #091932;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    .p-button-label {
+      margin-left: -7px;
+      font-size: 16px;
+    }
+  }
+  .model-btn {
+    @include multiTextFotterButtonStyle(29px);
+  }
+}
+
+.add-animation {
+  margin-left: -54px;
+  round-icon-button {
+    .p-button {
+      .p-button-icon-left {
+        margin-left: 23px !important;
+      }
+    }
+  }
+  .add-btn {
+    .remove-icon {
+      .p-button-icon-only {
+        border-radius: 50%;
+        width: 30px;
+        bottom: 50px;
+        height: 30px;
+        left: 14px;
+      }
+      .pi-minus {
+        margin-left: 0px;
+        position: relative;
+        right: 3px !important;
+        width: 10px !important;
+      }
+    }
+    .p-element {
+      align-items: center;
+      justify-content: center;
+    }
+    .p-button {
+      border-radius: 6px;
+      width: 8rem;
+      background: #091932;
+      .p-button-icon {
+        margin-left: 0px;
+        position: relative;
+        right: 16px;
+      }
+    }
+  }
+  .btn-group-model {
+    border-top: 1px solid #bababb;
+    .cancel-btn {
+      margin-top: 19px;
+    }
+  }
+  .p-element {
+    .p-dialog-header {
+      padding: 0.8rem;
+    }
+    .p-dialog-content {
+      padding: 0.8rem;
+      .p-inputtextarea {
+        width: 90%;
+      }
+    }
+  }
+  .p-button-secondary {
+    width: 5rem !important;
+    height: 2.5rem !important;
+    background: #efeff1 !important;
+    border: 1px solid var(--grayscale-color) !important;
+    border-radius: 8px !important;
+    .p-button-label {
+      margin-left: 0px !important;
+    }
+  }
+  .model-btn {
+    .p-button {
+      width: 5rem !important;
+      height: 2.5rem !important;
+      background: #091932 !important;
+      border: 1px solid var(--grayscale-color) !important;
+      border-radius: 8px !important;
+    }
+    .p-button-label {
+      margin-left: 0px !important;
+    }
+  }
+  .p-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #091932;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    .p-button-label {
+      margin-right: 10px;
+      font-size: 16px;
+    }
+  }
+  .model-btn {
+    justify-content: flex-end;
+    margin-right: 55px;
+    margin-top: 20px;
+  }
+
+  .submit-btn .p-button.p-component {
+    background: var(--background-color);
+  }
+}
+
+.add-questions {
+  margin-left: -44px;
+  .round-icon-button {
+    // margin-left: -29px;
+    // margin-top: 30px;
+    .p-button {
+      .p-button-icon-left {
+        margin-left: 23px !important;
+      }
+    }
+  }
+  .add-btn {
+    .remove-icon {
+      .p-button-icon-only {
+        border-radius: 50%;
+        width: 30px;
+        bottom: 50px;
+        height: 30px;
+        left: 14px;
+      }
+      .pi-minus {
+        margin-left: 0px;
+        position: relative;
+        right: 3px !important;
+        width: 10px !important;
+      }
+    }
+    .p-element {
+      align-items: center;
+      justify-content: center;
+    }
+    .p-button {
+      border-radius: 6px;
+      width: 8rem;
+      background: #091932;
+      .p-button-icon {
+        margin-left: 0px;
+        position: relative;
+        right: 16px;
+      }
+    }
+    .p-inputtextarea-resizable {
+      height: 4rem;
+    }
+  }
+  .btn-group-model {
+    border-top: 1px solid #bababb;
+    .cancel-btn {
+      margin-top: 19px;
+    }
+  }
+  .p-element {
+    .p-dialog {
+      width: 100%;
+      max-width: 40rem;
+    }
+    .p-dialog-header {
+      padding: 0.8rem;
+    }
+    .p-dialog-content {
+      padding: 0.8rem;
+      .p-inputtextarea {
+        width: 90%;
+      }
+    }
+  }
+  .p-button-secondary {
+    width: 5rem !important;
+    height: 2.5rem !important;
+    background: #efeff1 !important;
+    border: 1px solid var(--grayscale-color) !important;
+    border-radius: 8px !important;
+    .p-button-label {
+      margin-left: 0px !important;
+    }
+  }
+  .model-btn {
+    .p-button {
+      width: 5rem !important;
+      height: 2.5rem !important;
+      background: #091932 !important;
+      border: 1px solid var(--grayscale-color) !important;
+      border-radius: 8px !important;
+    }
+    .p-button-label {
+      margin-left: 0px !important;
+    }
+  }
+  .p-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #091932;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    .p-button-label {
+      margin-left: -18px;
+      font-size: 16px;
+    }
+  }
+  .model-btn {
+    justify-content: flex-end;
+    margin-right: 55px;
+    margin-top: 20px;
+  }
+
+  .submit-btn .p-button.p-component {
+    background: var(--background-color);
+  }
+}
+
+.footer-btns {
+  top: 7rem;
+  margin-left: 10px;
+  margin-right: 40px;
+  .cancel-btn {
+    .p-button {
+      width: 7.5rem;
+      height: 2.5rem;
+      background: #efeff1;
+      color: #091932;
+      border: 1px solid #091932;
+      border-radius: 8px;
+      opacity: 1;
+      .p-button-label {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+
+  .submit-btn {
+    .p-button {
+      width: 8.5rem;
+      height: 2.5rem;
+      background: #091932;
+    }
+  }
+}
+.test {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5rem;
+}
+
+.custom-textarea textarea::placeholder {
+  color: #999;
+  top: 10px;
+  position: relative;
+  padding: 0px 35px;
+  font-size: 16px;
+}
+
+.add-link .offer-textarea textarea::placeholder {
+  color: #999;
+  top: 10px;
+  position: relative;
+  padding-left: 14px;
+  font-size: 16px;
+}
+
+.custom-textarea.full-width {
+  width: 50rem;
+}
+
+.my-swal .swal2-title {
+  font-size: 1rem;
+  color: #333;
+}
+
+.my-swal .swal2-icon {
+  font-size: 0.5rem;
+}
+
+.my-swal .swal2-content {
+  font-size: 0.5rem;
+}

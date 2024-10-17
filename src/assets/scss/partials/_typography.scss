@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Manrope";
+  src: url("./../../fonts/Manrope-variable.ttf");
+}
+
+:root {
+  --primary-font: "Manrope";
+}
+
+h3 {
+  color: var(--primary-bg);
+}

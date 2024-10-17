@@ -1,0 +1,220 @@
+<div class="flex justify-content-end">
+  <div class="mb-3 mt-3">
+    <span class="text-xs mb-1 block">Choose the application</span>
+    <p-dropdown
+      class="dashboard-dropdown mt-3"
+      [options]="clientNames"
+      [(ngModel)]="defaultSelectedClient"
+      (onChange)="onDashboardChange(defaultSelectedClient)"
+    >
+    </p-dropdown>
+  </div>
+</div>
+
+<div class="cards-grid grid m-0">
+  <div class="col-12 lg:col-6 mb-5">
+    <div class="card-widget">
+      <p-card-header>
+        <div class="card-header">
+          <div class="header">
+            <span class="icon-eye"></span>
+          </div>
+
+          <span class="icon-header">Most Viewed Pages</span>
+        </div>
+        <span class="menu-icon">
+          <span class="icon-menu mt-3 block" (click)="MostViewedPages()"></span>
+        </span>
+      </p-card-header>
+
+      <div id="pie-chart-container"></div>
+
+      @if (!mostViewedPagedata.length) {
+      <div class="wrapper-cell">
+        <div class="text flex justify-content-center">
+          <div class="text-line circle"></div>
+        </div>
+      </div>
+      <!-- <div class="text-center py-5">No Data Found</div> -->
+      }
+    </div>
+  </div>
+
+  <div class="col-12 lg:col-6 mb-5">
+    <div class="clicked-actions card-widget">
+      <p-card-header>
+        <div class="card-header">
+          <div class="header">
+            <div class="icon-cursor-finger"></div>
+          </div>
+
+          <span class="icon-header">Most Clicked Actions </span>
+        </div>
+        <span class="menu-icon"
+          ><a routerLink="/mostClickedActions" (click)="MostClickedActions()"
+            ><span class="icon-menu mt-3 block"></span></a
+        ></span>
+      </p-card-header>
+      <div id="bar-chart-container"></div>
+
+      @if (!mostClickedActions.length) {
+      <div class="wrapper-cell">
+        <div class="text">
+          <div class="text-line"></div>
+          <div class="text-line"></div>
+          <div class="text-line"></div>
+          <div class="text-line"></div>
+          <div class="text-line"></div>
+          <div class="text-line"></div>
+          <div class="text-line"></div>
+          <div class="text-line"></div>
+        </div>
+      </div>
+      <!-- <div class="text-center py-5">No Data Found</div> -->
+      }
+    </div>
+  </div>
+
+  <div class="col-12 lg:col-6 mb-5">
+    <div class="active-user-by-device card-widget">
+      <p-card-header>
+        <div class="card-header">
+          <div class="header">
+            <div class="icon-User"></div>
+          </div>
+          <span class="icon-header">Active User by Device</span>
+        </div>
+        <span class="menu-icon"
+          ><a routerLink="/mostActiveUser" (click)="ActiveUserByDevice()"
+            ><span class="icon-menu mt-3 block"></span></a
+        ></span>
+      </p-card-header>
+
+      <div id="pieChartContainer"></div>
+      <div
+        id="total-count"
+        class="center-label"
+        [ngClass]="{ hide: mostDevicedata.length === 0 }"
+      ></div>
+      @if (!mostDevicedata.length) {
+      <div class="wrapper-cell">
+        <div class="text flex justify-content-center">
+          <div class="text-line circle"></div>
+        </div>
+      </div>
+      <!-- <div class="text-center py-5">No Data Found</div> -->
+      }
+    </div>
+  </div>
+
+  <div class="col-12 lg:col-6 mb-5">
+    <div class="card-widget">
+      <p-card-header>
+        <div class="card-header">
+          <div class="header">
+            <div class="icon-globe"></div>
+          </div>
+          <span class="icon-header">Most Used Browsers</span>
+        </div>
+        <span class="menu-icon"
+          ><a routerLink="/mostUsedBrowsers" (click)="MostUsedBrowser()"
+            ><span class="icon-menu mt-3 block"></span></a
+        ></span>
+      </p-card-header>
+
+      @if (browserCounts.length !== 0) {
+      <div
+        id="most-used-browsers-chart-container"
+        class="browser-view"
+        [ngClass]="{ hide: browserCounts.length === 0 }"
+      ></div>
+      } @if (!browserCounts.length) {
+      <div class="wrapper-cell">
+        <div class="text">
+          <div class="text-line"></div>
+          <div class="text-line"></div>
+          <div class="text-line"></div>
+          <div class="text-line"></div>
+          <div class="text-line"></div>
+          <div class="text-line"></div>
+          <div class="text-line"></div>
+          <div class="text-line"></div>
+        </div>
+      </div>
+      <!-- <div class="text-center py-5">No Data Found</div> -->
+      }
+    </div>
+  </div>
+  <div
+    class="col-12 lg:col-6 mb-5"
+    [ngClass]="{ 'disable-class': ismapDisable === true }"
+  >
+    <div class="card-widget" size="large">
+      <p-card-header>
+        <div class="card-header">
+          <div class="header">
+            <div class="icon-maplandmark"></div>
+          </div>
+          <span class="icon-header">Most Used Countries</span>
+        </div>
+        <span class="menu-icon"
+          ><a routerLink="/mostUsedCountries" (click)="MostUsedCountries()"
+            ><span class="icon-menu mt-3 block"></span></a
+        ></span>
+      </p-card-header>
+      <div class="grid">
+        <div class="md:col-7 sm:col-12">
+          <!-- <highcharts-chart
+            id="map-chart-container"
+            [Highcharts]="Highcharts"
+            [constructorType]="chartConstructor"
+            [options]="mapChartOptions"
+          >
+          </highcharts-chart> -->
+          <div id="map-chart-container"></div>
+        </div>
+
+        @if (mostUsedCountriesdata.length) {
+        <div class="md:col-5 sm:col-12">
+          <div class="flex align-items-center h-full">
+            <div class="chart-progress-bars">
+              <div class="progress-container">
+                <label>Countries</label>
+                <progress [max]="maxValue" value="0"></progress>
+                <span class="progress-value">Users</span>
+              </div>
+              <!-- Rest of the Progress Bars -->
+              <div
+                *ngFor="let progressBar of progressBars"
+                class="progress-container"
+              >
+                <label>{{ progressBar.label }}</label>
+                <progress
+                  [id]="progressBar.id"
+                  [max]="maxValue"
+                  [value]="progressBar.value"
+                ></progress>
+                <span class="progress-value">{{ progressBar.value }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        } @if (! mostUsedCountriesdata.length) {
+        <div class="wrapper-cell">
+          <div class="text">
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+          </div>
+        </div>
+        <!-- <div class="text-center py-5">No Data Found</div> -->
+        }
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+@import "./_mixins.scss";
+
+aside {
+  @include sideBarBaseStyle;
+
+  ul {
+    width: 100%;
+    li {
+      font-size: 1.5rem;
+
+      color: #ccc;
+      a {
+        color: var(--menu-item-color);
+        font-size: 1rem;
+        padding: 16px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        text-decoration: none;
+        border: transparent;
+        .icon-text {
+          margin-left: 10px;
+        }
+
+        svg {
+          width: 1rem;
+          height: 1rem;
+          margin-right: 1.5rem;
+        }
+        &.active {
+          color: var(--menu-item-active-color);
+          border-left: 1px solid #3b3a3a;
+          border-top: 1px solid #3b3a3a;
+          border-bottom: 1px solid #3b3a3a;
+          background: var(--background-color);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.dark-mode {
+  aside {
+    filter: grayscale(1);
+  }
+}

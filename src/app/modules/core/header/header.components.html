@@ -1,0 +1,17 @@
+<header class="sticky top-0">
+  <!-- <span class="burger-container">
+    <img src="./../../../../assets/img/burger.svg" /> 
+  </span> -->
+  <div><h3 class="mb-0"></h3></div>
+  <div class="user-profile">
+    <p-inputSwitch [(ngModel)]="checked" (onChange)="toggleBodyClass()" />
+
+    <span>
+      <p class="user-name">{{username}}</p>
+      <p class="user-role">{{userRole}}</p>
+    </span>
+    <span class="img-holder">
+      <img src="../../../../assets/img/user-pic.svg" />
+    </span>
+  </div>
+</header>
